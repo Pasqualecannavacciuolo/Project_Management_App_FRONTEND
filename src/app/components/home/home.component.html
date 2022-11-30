@@ -1,0 +1,21 @@
+<div class="container">
+  <form [formGroup]="registerUserForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Lastname</label>
+      <input type="text" class="form-control" id="lastname" formControlName="lastname">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label for="cf" class="form-label">CF</label>
+      <input type="text" class="form-control" id="cf" formControlName="cf">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="registerUser()">Registra operatore</button>
+  </form>
+</div>
