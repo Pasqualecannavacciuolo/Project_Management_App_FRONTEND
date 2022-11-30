@@ -48,28 +48,39 @@
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
           data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
+          PM tipo 3
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-            <li><a href="#" class="link-dark rounded">Annually</a></li>
+            <li><a  class="link-dark rounded" [routerLink]="'panoramica-operatori'">Panoramica</a></li>
+            <li><a  class="link-dark rounded" [routerLink]="'add-operatore'">Aggiunti PM</a></li>
+            <li><a  class="link-dark rounded" [routerLink]="'find-operatore'">Trova PM</a></li>
           </ul>
         </div>
       </li>
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
           data-bs-target="#orders-collapse" aria-expanded="false">
-          Orders
+          PM tipo 2
         </button>
         <div class="collapse" id="orders-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New</a></li>
-            <li><a href="#" class="link-dark rounded">Processed</a></li>
-            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-            <li><a href="#" class="link-dark rounded">Returned</a></li>
+            <li><a  class="link-dark rounded" [routerLink]="'panoramica-operatori'">Panoramica</a></li>
+            <li><a  class="link-dark rounded" [routerLink]="'add-operatore'">Aggiunti PM</a></li>
+            <li><a  class="link-dark rounded" [routerLink]="'find-operatore'">Trova PM</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+          data-bs-target="#orders-collapse" aria-expanded="false">
+          PM tipo 1
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a  class="link-dark rounded" [routerLink]="'panoramica-operatori'">Panoramica</a></li>
+            <li><a  class="link-dark rounded" [routerLink]="'add-operatore'">Aggiunti PM</a></li>
+            <li><a  class="link-dark rounded" [routerLink]="'find-operatore'">Trova PM</a></li>
           </ul>
         </div>
       </li>
