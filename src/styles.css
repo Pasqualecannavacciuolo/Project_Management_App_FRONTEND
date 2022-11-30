@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background: rgb(131,58,180);
-  background: -moz-linear-gradient(100deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-  background: -webkit-linear-gradient(100deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-  background: linear-gradient(100deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#fcb045",GradientType=1);
+  background: rgb(5,89,193);
+  background: -moz-linear-gradient(90deg, rgba(5,89,193,1) 0%, rgba(11,98,148,1) 53%, rgba(0,131,255,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(5,89,193,1) 0%, rgba(11,98,148,1) 53%, rgba(0,131,255,1) 100%);
+  background: linear-gradient(90deg, rgba(5,89,193,1) 0%, rgba(11,98,148,1) 53%, rgba(0,131,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0559c1",endColorstr="#0083ff",GradientType=1);
   height: 100vh;
   max-height: 100%;
 }

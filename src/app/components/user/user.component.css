@@ -1,44 +1,8 @@
-.page {
+table {
   background: rgba( 255, 255, 255, 0.55 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 9.5px );
--webkit-backdrop-filter: blur( 9.5px );
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
 border-radius: 10px;
 }
 
-.title,
-h1 {
-  /*text-align: center;*/
-  margin: 15px 0;
-  font-size: 38px;
-}
-
-.title a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.full-content {
-  margin: 100px 100px;
-  min-height: 60vh;
-  height: fit-content;
-  padding: 50px;
-  background-color: var(--background-color);
-}
-
-.wrapper {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  gap: 25px;
-  width: 100%;
-  min-width: fit-content;
-}
-
-.action-list {
-  width: 30%;
-}
-
-.action-outlet {
-  width: 60%;
-}

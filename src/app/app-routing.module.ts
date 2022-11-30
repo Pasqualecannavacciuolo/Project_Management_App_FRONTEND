@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AddUserComponent } from './components/user/add-user/add-user.component';
-import { HomeUsersComponent } from './components/user/home-users/home-users.component';
 import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
@@ -16,21 +15,13 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'operatori',
-    component: UserComponent,
-    children: [
-      {
-        path: '',
-        component: HomeUsersComponent,
-        outlet: 'operatore_outlet'
-      },
-      {
-        path: 'add-user',
-        component: AddUserComponent,
-        outlet: 'operatore_outlet'
-      }
-    ]
+    path: 'panoramica-operatori',
+    component: UserComponent
   },
+  {
+    path: 'add-user',
+    component: AddUserComponent
+  }
 ];
 
 @NgModule({
