@@ -21,4 +21,9 @@ export class UserService {
     const url = "http://localhost:8080/findAll";
     return this.http.get<Users[]>(url);
   }
+
+  getUserById(id: any): Observable<Users> {
+    const url = `http://localhost:8080/${id}`;
+    return this.http.get<Users>(url);
+  }
 }

@@ -1,0 +1,59 @@
+<div class="container-fluid mt-5 p-5">
+  <h2>Trova un operatore</h2>
+
+  <form [formGroup]="findUserForm">
+
+    <div class="form-check form-switch mt-3 mb-3">
+      <input class="form-check-input" type="checkbox" role="switch" id="switch" formControlName="switch">
+      <label class="form-check-label" for="switch">Cerca più operatori</label>
+    </div>
+
+    <div class="mb-3">
+      <label for="id" class="form-label">ID operatore da ricercare</label>
+      <input type="text" class="form-control" id="id" formControlName="id">
+      <div *ngIf="findUserForm.controls['id'].invalid && (findUserForm.controls['id'].dirty || findUserForm.controls['id'].touched)">
+        <div *ngIf="findUserForm.controls['id'].errors?.['required']">
+          <small class="text-danger">L'ID da ricercare è richiesto</small>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark" (click)="findUser(switch)">Trova operatore</button>
+
+  </form>
+</div>
+
+
+<div class="container-fluid mt-5 p-5" *ngIf="showRecordFound == true">
+  <h2 *ngIf="users?.length == 0">Record trovato</h2>
+  <h2 *ngIf="users?.length != 0">Record trovati</h2>
+  <table class="table table-borderless">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Email</th>
+        <th scope="col">CF</th>
+      </tr>
+    </thead>
+      <tbody *ngIf="users?.length != 0">
+        <tr *ngFor="let user of users">
+          <th scope="row">{{ user?.id }}</th>
+          <td>{{ user?.name }}</td>
+          <td>{{ user?.lastname }}</td>
+          <td>{{ user?.email }}</td>
+          <td>{{ user?.cf }}</td>
+        </tr>
+      </tbody>
+    <tbody *ngIf="users?.length == 0">
+      <tr>
+        <th scope="row">{{ user?.id }}</th>
+        <td>{{ user?.name }}</td>
+        <td>{{ user?.lastname }}</td>
+        <td>{{ user?.email }}</td>
+        <td>{{ user?.cf }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

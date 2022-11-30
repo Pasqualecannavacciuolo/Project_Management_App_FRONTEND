@@ -9,13 +9,15 @@ import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/user/add-user/add-user.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FindUserComponent } from './components/user/find-user/find-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UserComponent,
-    AddUserComponent
+    AddUserComponent,
+    FindUserComponent
   ],
   imports: [
     BrowserModule,
