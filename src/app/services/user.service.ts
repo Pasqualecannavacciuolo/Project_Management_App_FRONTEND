@@ -16,4 +16,9 @@ export class UserService {
     const url = "http://localhost:8080/saveOne";
     return this.http.post(url, user);
   }
+
+  getAllUsers(): Observable<Users[]> {
+    const url = "http://localhost:8080/findAll";
+    return this.http.get<Users[]>(url);
+  }
 }
