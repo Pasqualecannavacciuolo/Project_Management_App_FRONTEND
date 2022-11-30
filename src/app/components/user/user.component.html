@@ -1,50 +1,26 @@
-<div class="container">
-  <form [formGroup]="registerUserForm">
-
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control ng-touched" id="name" formControlName="name" required>
-      <div *ngIf="registerUserForm.controls['name'].invalid && (registerUserForm.controls['name'].dirty || registerUserForm.controls['name'].touched)">
-        <div *ngIf="registerUserForm.controls['name'].errors?.['required']">
-          <small class="text-danger">Nome è richiesto</small>
-        </div>
-      </div>
+<div class="page mt-5">
+  <div class="full-content">
+    <div class="title">
+      <h1><a [routerLink]="['/operatori/']">DASHBOARD GENERALE</a></h1>
     </div>
-
-    <div class="mb-3">
-      <label for="lastname" class="form-label">Lastname</label>
-      <input type="text" class="form-control ng-touched" id="lastname" formControlName="lastname">
-      <div *ngIf="registerUserForm.controls['lastname'].invalid && (registerUserForm.controls['lastname'].dirty || registerUserForm.controls['lastname'].touched)">
-        <div *ngIf="registerUserForm.controls['lastname'].errors?.['required']">
-          <small class="text-danger">Lastname è richiesto</small>
-        </div>
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+      <div class="action-list">
+        <h2>Azioni</h2>
+        <ul>
+          <button class="btn btn-light mt-3" [routerLink]="[
+              '/operatori/',
+              { outlets: { operatore_outlet: ['add-user'] } }
+            ]">
+            Aggiungi operatore
+          </button>
+        </ul>
       </div>
-    </div>
 
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" formControlName="email">
-      <div *ngIf="registerUserForm.controls['email'].invalid && (registerUserForm.controls['email'].dirty || registerUserForm.controls['email'].touched)">
-        <div *ngIf="registerUserForm.controls['email'].errors?.['required']">
-          <small class="text-danger">Email è richiesta</small>
-        </div>
-        <div *ngIf="registerUserForm.controls['email'].errors?.['email']">
-          <small class="text-warning">Email in formato non corretto</small>
-        </div>
+      <div class="action-outlet">
+        <router-outlet name="operatore_outlet"></router-outlet>
       </div>
+
     </div>
-
-    <div class="mb-3">
-      <label for="cf" class="form-label">CF</label>
-      <input [maxLength]="16" type="text" class="form-control" id="cf" formControlName="cf">
-      <div *ngIf="registerUserForm.controls['cf'].invalid && (registerUserForm.controls['cf'].dirty || registerUserForm.controls['cf'].touched)">
-        <div *ngIf="registerUserForm.controls['cf'].errors?.['required']">
-          <small class="text-danger">Codice fiscale è richiesto</small>
-        </div>
-      </div>
-    </div>
-
-    <button type="submit" class="btn btn-primary" (click)="registerUser()">Registra operatore</button>
-
-  </form>
+  </div>
 </div>
