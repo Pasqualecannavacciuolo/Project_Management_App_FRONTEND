@@ -12,7 +12,6 @@ export class AddUserComponent implements OnInit{
 
   registerUserForm!: FormGroup;
   user?: Users;
-  visibleError: boolean = false;
 
   constructor(private fb: FormBuilder, private UserService: UserService) {}
 
