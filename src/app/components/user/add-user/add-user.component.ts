@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Users } from 'src/app/models/Users';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-user',
@@ -52,6 +53,15 @@ export class AddUserComponent implements OnInit{
     this.UserService.saveUser(this.user).subscribe((u) => {
       this.user = u;
       console.log(u)
+    });
+
+    // Alert personalizzato che avvisa dell'avvenuta aggiunta dell'operatore
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Operatore aggiunto con successo',
+      showConfirmButton: false,
+      timer: 1500
     });
 
   }
