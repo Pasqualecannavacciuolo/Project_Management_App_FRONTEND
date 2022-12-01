@@ -5,3 +5,6 @@ backdrop-filter: blur( 16.5px );
 -webkit-backdrop-filter: blur( 16.5px );
 border-radius: 10px;
 }
+ .error {
+  padding: 5px;
+ }
