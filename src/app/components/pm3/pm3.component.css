@@ -12,6 +12,8 @@ table {
   backdrop-filter: blur(16.5px);
   -webkit-backdrop-filter: blur(16.5px);
   border-radius: 10px;
+  min-height: 300px;
+  max-height: max-content;
 }
 
 .my-pagination ::ng-deep .ngx-pagination .current {
@@ -34,4 +36,19 @@ table {
 
 .my-pagination ::ng-deep .ngx-pagination .pagination-next {
   color: rgb(48, 46, 46);
+}
+
+
+
+.spinner-border {
+  width: 100px;
+  height: 100px;
+}
+
+.spinner-table {
+  margin: 0 auto;
+}
+
+.spinner-container {
+  padding-top: 150px;
 }

@@ -12,13 +12,19 @@ export class UserComponent implements OnInit{
 
   users: Users[] = [];
   p: string|number|undefined;
+  isLoading: boolean = true;
+
 
   constructor(private UserService: UserService) {}
 
 
   ngOnInit(): void {
     this.UserService.getAllUsers().subscribe((fetchedUsers) => {
-      this.users = fetchedUsers;
+      setTimeout(() => {
+        this.users = fetchedUsers;
+        this.isLoading = false;
+      }, 2000);
+
     });
   }
 

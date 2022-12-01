@@ -10,8 +10,15 @@
         <th scope="col">CF</th>
       </tr>
     </thead>
+
+    <div *ngIf="isLoading == true" class="spinner-container position-absolute top-50 start-50 translate-middle">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden" id="spinner">Loading...</span>
+      </div>
+    </div>
+
     <tbody *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: p }">
-      <tr>
+      <tr *ngIf="isLoading == false">
         <th scope="row">{{ user.id }}</th>
         <td>{{ user.name }}</td>
         <td>{{ user.lastname }}</td>
@@ -21,7 +28,7 @@
     </tbody>
   </table>
 
-  <nav>
+  <nav *ngIf="isLoading == false">
     <ul class="pagination justify-content-center">
       <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
     </ul>
