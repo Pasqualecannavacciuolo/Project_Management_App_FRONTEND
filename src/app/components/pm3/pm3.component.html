@@ -1,0 +1,29 @@
+<div class="container-fluid mt-5 p-5">
+  <h2>Tabella di tutti i PM di tipo 3</h2>
+  <table class="table table-borderless">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Email</th>
+        <th scope="col">CF</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let pm3 of pm3s | paginate: { itemsPerPage: 10, currentPage: p }">
+      <tr>
+        <th scope="row">{{ pm3.id }}</th>
+        <td>{{ pm3.name }}</td>
+        <td>{{ pm3.lastname }}</td>
+        <td>{{ pm3.email }}</td>
+        <td>{{ pm3.cf }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <nav>
+    <ul class="pagination justify-content-center">
+      <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+    </ul>
+  </nav>
+</div>

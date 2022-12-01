@@ -9,13 +9,19 @@ import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/user/add-user/add-user.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FindUserComponent } from './components/user/find-user/find-user.component';
+import { Pm3Component } from './components/pm3/pm3.component';
+import { AddPm3Component } from './components/pm3/add-pm3/add-pm3.component';
+import { FindPm3Component } from './components/pm3/find-pm3/find-pm3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     AddUserComponent,
-    FindUserComponent
+    FindUserComponent,
+    Pm3Component,
+    AddPm3Component,
+    FindPm3Component
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,6 @@ export interface PMS3 {
   lastname: string,
   email: string,
   cf: string,
-  pm2: PMS2
-  users_assigned: Set<Users>
+  pm2?: PMS2
+  users_assigned?: Set<Users>
 }
