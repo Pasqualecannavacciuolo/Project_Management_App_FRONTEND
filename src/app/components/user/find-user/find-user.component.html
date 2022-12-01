@@ -10,10 +10,10 @@
 
     <div class="mb-3">
       <label for="id" class="form-label">ID operatore da ricercare</label>
-      <input type="text" class="form-control" id="id" formControlName="id">
+      <input type="text" class="form-control mb-2" id="id" formControlName="id">
       <div *ngIf="findUserForm.controls['id'].invalid && (findUserForm.controls['id'].dirty || findUserForm.controls['id'].touched)">
         <div *ngIf="findUserForm.controls['id'].errors?.['required']">
-          <small class="text-danger">L'ID da ricercare è richiesto</small>
+          <small class="error text-bg-light text-danger rounded-2">L'ID da ricercare è richiesto</small>
         </div>
       </div>
     </div>

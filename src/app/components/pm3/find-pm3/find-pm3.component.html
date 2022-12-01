@@ -10,10 +10,10 @@
 
     <div class="mb-3">
       <label for="id" class="form-label">ID PM da ricercare</label>
-      <input type="text" class="form-control" id="id" formControlName="id">
+      <input type="text" class="form-control mb-2" id="id" formControlName="id">
       <div *ngIf="findPM3Form.controls['id'].invalid && (findPM3Form.controls['id'].dirty || findPM3Form.controls['id'].touched)">
         <div *ngIf="findPM3Form.controls['id'].errors?.['required']">
-          <small class="text-danger">L'ID da ricercare è richiesto</small>
+          <small class="error text-bg-light text-danger rounded-2">L'ID da ricercare è richiesto</small>
         </div>
       </div>
     </div>
