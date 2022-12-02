@@ -11,9 +11,10 @@ import { UserService } from 'src/app/services/user.service';
 export class UserComponent implements OnInit{
 
   users: Users[] = [];
-  p: string|number|undefined;
   isLoading: boolean = true;
+  table_title: string = "Tabella di tutti gli operatori";
 
+  p: string|number|undefined;
 
   constructor(private UserService: UserService) {}
 

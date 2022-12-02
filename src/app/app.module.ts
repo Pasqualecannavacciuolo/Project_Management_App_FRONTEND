@@ -12,6 +12,7 @@ import { FindUserComponent } from './components/user/find-user/find-user.compone
 import { Pm3Component } from './components/pm3/pm3.component';
 import { AddPm3Component } from './components/pm3/add-pm3/add-pm3.component';
 import { FindPm3Component } from './components/pm3/find-pm3/find-pm3.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FindPm3Component } from './components/pm3/find-pm3/find-pm3.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

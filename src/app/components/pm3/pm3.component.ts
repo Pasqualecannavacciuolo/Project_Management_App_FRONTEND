@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
 import { PMS3 } from 'src/app/models/PMS3';
 import { Pm3Service } from 'src/app/services/pm3.service';
 
@@ -11,8 +10,10 @@ import { Pm3Service } from 'src/app/services/pm3.service';
 export class Pm3Component implements OnInit{
 
   pm3s: PMS3[] = [];
-  p: string|number|undefined;
   isLoading: boolean = true;
+  table_title: string = "Tabella di tutti i PM di tipo 3";
+
+  p: string|number|undefined;
 
   constructor(private PM3Service: Pm3Service) {}
 
