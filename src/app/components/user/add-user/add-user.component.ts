@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Users } from 'src/app/models/Users';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
@@ -9,61 +8,26 @@ import Swal from 'sweetalert2';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements OnInit{
+export class AddUserComponent{
 
-  registerUserForm!: FormGroup;
   user?: Users;
 
-  constructor(private fb: FormBuilder, private UserService: UserService) {}
+  constructor(private UserService: UserService) {}
 
-  ngOnInit(): void {
-    this.registerUserForm = this.fb.group({
-      name: ['', Validators.required],
-      lastname: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      cf: ['', Validators.required],
-    });
-  }
+    add(data_from_form: any) {
+      console.log(data_from_form)
+      this.UserService.saveUser(data_from_form).subscribe((user) => {
+        this.user = user;
+        console.log(this.user)
+      });
 
-  get name() {
-    return this.registerUserForm.get('name');
-  }
-  get lastname() {
-    return this.registerUserForm.get('lastname');
-  }
-  get email() {
-    return this.registerUserForm.get('email');
-  }
-  get cf() {
-    return this.registerUserForm.get('cf');
-  }
-
-
-  registerUser() {
-
-    this.user = {
-      //id: uuidv4(),
-      name: this.name?.value,
-      lastname: this.lastname?.value,
-      email: this.email?.value,
-      cf: this.cf?.value
-      //pm3s: new Set<PMS3>
+      // Alert personalizzato che avvisa dell'avvenuta aggiunta dell'operatore
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Operatore aggiunto con successo',
+        showConfirmButton: false,
+        timer: 1500
+      });
     }
-
-    this.UserService.saveUser(this.user).subscribe((u) => {
-      this.user = u;
-      console.log(u)
-    });
-
-    // Alert personalizzato che avvisa dell'avvenuta aggiunta dell'operatore
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Operatore aggiunto con successo',
-      showConfirmButton: false,
-      timer: 1500
-    });
-
-  }
-
 }

@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5 p-5">
+<div class="add-form mt-5 p-5">
   <h2>Trova un PM di tipo 3</h2>
 
   <form [formGroup]="findPM3Form">
@@ -24,7 +24,7 @@
 </div>
 
 
-<div class="container-fluid mt-5 p-5" *ngIf="showRecordFound == true">
+<div class="add-form mt-5 p-5" *ngIf="showRecordFound == true">
   <h2 *ngIf="pm3s?.length == 0">Record trovato</h2>
   <h2 *ngIf="pm3s?.length != 0">Record trovati</h2>
   <table class="table table-borderless">

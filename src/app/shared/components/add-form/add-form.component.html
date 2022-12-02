@@ -1,0 +1,51 @@
+<div class="container-fluid mt-5 p-5">
+  <h2>Aggiungi un PM di tipo 3</h2>
+  <form [formGroup]="registerForm">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control ng-touched mb-2" id="name" formControlName="name" required>
+      <div *ngIf="registerForm.controls['name'].invalid && (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)">
+        <div *ngIf="registerForm.controls['name'].errors?.['required']">
+          <small class="error text-bg-light text-danger rounded-2">Nome è richiesto</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Lastname</label>
+      <input type="text" class="form-control ng-touched mb-2" id="lastname" formControlName="lastname">
+      <div *ngIf="registerForm.controls['lastname'].invalid && (registerForm.controls['lastname'].dirty || registerForm.controls['lastname'].touched)">
+        <div *ngIf="registerForm.controls['lastname'].errors?.['required']">
+          <small class="error text-bg-light text-danger rounded-2">Lastname è richiesto</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control mb-2" id="email" formControlName="email">
+      <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+        <div *ngIf="registerForm.controls['email'].errors?.['required']">
+          <small class="error text-bg-light text-danger rounded-2">Email è richiesta</small>
+        </div>
+        <div *ngIf="registerForm.controls['email'].errors?.['email']">
+          <small class="error text-bg-dark text-warning rounded-2">Email in formato non corretto</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="cf" class="form-label">CF</label>
+      <input [maxLength]="16" type="text" class="form-control mb-2" id="cf" formControlName="cf">
+      <div *ngIf="registerForm.controls['cf'].invalid && (registerForm.controls['cf'].dirty || registerForm.controls['cf'].touched)">
+        <div *ngIf="registerForm.controls['cf'].errors?.['required']">
+          <small class="error text-bg-light text-danger rounded-2">Codice fiscale è richiesto</small>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark" (click)="passData()">Aggiungi</button>
+
+  </form>
+</div>
