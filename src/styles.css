@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background: rgb(5,89,193);
-  background: -moz-linear-gradient(90deg, rgba(5,89,193,1) 0%, rgba(11,98,148,1) 53%, rgba(0,131,255,1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(5,89,193,1) 0%, rgba(11,98,148,1) 53%, rgba(0,131,255,1) 100%);
-  background: linear-gradient(90deg, rgba(5,89,193,1) 0%, rgba(11,98,148,1) 53%, rgba(0,131,255,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0559c1",endColorstr="#0083ff",GradientType=1);
+  background: rgb(5, 89, 193);
+  background: -moz-linear-gradient(90deg, rgba(5, 89, 193, 1) 0%, rgba(11, 98, 148, 1) 53%, rgba(0, 131, 255, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(5, 89, 193, 1) 0%, rgba(11, 98, 148, 1) 53%, rgba(0, 131, 255, 1) 100%);
+  background: linear-gradient(90deg, rgba(5, 89, 193, 1) 0%, rgba(11, 98, 148, 1) 53%, rgba(0, 131, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0559c1", endColorstr="#0083ff", GradientType=1);
   height: 100vh;
   max-height: 100%;
 }
@@ -63,4 +63,17 @@ table {
 
 .spinner-container {
   padding-top: 150px;
+}
+
+
+.add-form {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(16.5px);
+  -webkit-backdrop-filter: blur(16.5px);
+  border-radius: 10px;
+}
+
+.error {
+  padding: 5px;
 }
