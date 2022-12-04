@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Users } from 'src/app/models/Users';
 
 @Component({
   selector: 'app-show-people-table',
@@ -8,7 +7,7 @@ import { Users } from 'src/app/models/Users';
 })
 export class ShowPeopleTableComponent{
 
-  @Input() users: Users[] = [];
+  @Input() users: any;
   @Input() isLoading: boolean = true;
   @Input() table_title: string = "";
 

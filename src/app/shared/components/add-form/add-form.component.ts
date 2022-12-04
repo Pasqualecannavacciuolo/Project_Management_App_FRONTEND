@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-form.component.css']
 })
 export class AddFormComponent implements OnInit{
+
   registerForm!: FormGroup;
   @Output() people_from_form = new EventEmitter<any>();
   people?: any;

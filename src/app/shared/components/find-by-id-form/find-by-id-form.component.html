@@ -1,1 +1,24 @@
-<p>find-by-id-form works!</p>
+<div class="add-form mt-5 p-5">
+  <h2>Trova un PM di tipo 3</h2>
+
+  <form [formGroup]="findForm">
+
+    <div class="form-check form-switch mt-3 mb-3">
+      <input class="form-check-input" type="checkbox" role="switch" id="switch" formControlName="switch">
+      <label class="form-check-label" for="switch">Cerca più PM di tipo 3</label>
+    </div>
+
+    <div class="mb-3">
+      <label for="id" class="form-label">ID da ricercare</label>
+      <input type="text" class="form-control mb-2" id="id" formControlName="id">
+      <div *ngIf="findForm.controls['id'].invalid && (findForm.controls['id'].dirty || findForm.controls['id'].touched)">
+        <div *ngIf="findForm.controls['id'].errors?.['required']">
+          <small class="error text-bg-light text-danger rounded-2">L'ID da ricercare è richiesto</small>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark" (click)="passData()">Trova</button>
+
+  </form>
+</div>
